@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DML">
+  <Items>
+    <LogicalFolder Name="Соединения" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="ANALAPOPACHLEN:ANALAPOPACHLEN\popka">
+          <Created>2026-02-18T16:24:11.6338065+03:00</Created>
+          <Type>SQL</Type>
+          <Server>ANALAPOPACHLEN</Server>
+          <UserName />
+          <Authentication>Проверка подлинности Windows</Authentication>
+          <InitialDB>PV_521_DDL</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>2147483647</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Среда Microsoft SQL Server Management Studio - запрос</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Запросы" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="Analytics_Directions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ANALAPOPACHLEN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ANALAPOPACHLEN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Analytics_Directions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Fill_Schedule.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ANALAPOPACHLEN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ANALAPOPACHLEN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Fill_Schedule.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Teacher_Workload.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ANALAPOPACHLEN:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ANALAPOPACHLEN</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Teacher_Workload.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Разное" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
