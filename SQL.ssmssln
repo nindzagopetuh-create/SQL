@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 20.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL", "SQL\SQL.ssmssqlproj", "{1C2F2DCD-6069-4537-B5E5-87E53BF7A19C}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DDL", "DDL\DDL.ssmssqlproj", "{E1C3E0C8-76EB-4253-9833-346D34706575}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "DML", "DML\DML.ssmssqlproj", "{3D256FCD-26A3-4A79-9198-6AEC00D1EF16}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Transact-SQL", "Transact-SQL\Transact-SQL.ssmssqlproj", "{A0D3BBFA-A8AE-48F3-A67F-A25167745707}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "StoredProcedures", "StoredProcedures\StoredProcedures.ssmssqlproj", "{4EC951D6-BAEF-4EE8-A4A3-B3214BB33B3F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Functions", "Functions\Functions.ssmssqlproj", "{23985F1F-04CB-46AF-9E81-66D025F67767}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C2F2DCD-6069-4537-B5E5-87E53BF7A19C}.Default|Default.ActiveCfg = Default
+		{E1C3E0C8-76EB-4253-9833-346D34706575}.Default|Default.ActiveCfg = Default
+		{3D256FCD-26A3-4A79-9198-6AEC00D1EF16}.Default|Default.ActiveCfg = Default
+		{A0D3BBFA-A8AE-48F3-A67F-A25167745707}.Default|Default.ActiveCfg = Default
+		{4EC951D6-BAEF-4EE8-A4A3-B3214BB33B3F}.Default|Default.ActiveCfg = Default
+		{6908F4B3-F76A-410A-8553-80CFF16BEBD0}.Default|Default.ActiveCfg = Default
+		{23985F1F-04CB-46AF-9E81-66D025F67767}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27402FC3-76A9-4E03-9714-7E877C5921E4}
+	EndGlobalSection
+EndGlobal

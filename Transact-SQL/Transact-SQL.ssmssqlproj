@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DDL">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Transact-SQL">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="DESKTOP-QHG18FL\SQLEXPRESS:DESKTOP-QHG18FL\User">
-          <Created>2026-02-13T20:23:07.3930544+03:00</Created>
+          <Created>2026-02-27T19:06:43.466786+03:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-QHG18FL\SQLEXPRESS</Server>
           <UserName />
           <Authentication>Windows Authentication</Authentication>
-          <InitialDB />
+          <InitialDB>master</InitialDB>
           <LoginTimeout>30</LoginTimeout>
           <TrustServerCertificate>True</TrustServerCertificate>
           <HostNameInServerCertificate />
@@ -22,41 +22,22 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="SQLQuery0 - CREATE DATABASE.sql">
+        <FileNode Name="SQLQuery1-INSERT Schedule.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-QHG18FL\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-QHG18FL\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery0 - CREATE DATABASE.sql</FullPath>
+          <FullPath>SQLQuery1-INSERT Schedule.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery1 - CREATE Students branch.sql">
+        <FileNode Name="SQLQuery1-SELECT Schedule.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1 - CREATE Students branch.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery2 - CREATE Teachers and Disciplines.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery2 - CREATE Teachers and Disciplines.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery3 - CREATE Schedule and Grades.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-QHG18FL\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-QHG18FL\SQLEXPRESS</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>SQLQuery3 - CREATE Schedule and Grades.sql</FullPath>
+          <FullPath>SQLQuery1-SELECT Schedule.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
-      <Items>
-        <FileNode Name="ReadMe.txt">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>ReadMe.txt</FullPath>
-        </FileNode>
-      </Items>
+      <Items />
     </LogicalFolder>
   </Items>
 </SqlWorkbenchSqlProject>

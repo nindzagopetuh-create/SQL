@@ -1,51 +1,55 @@
+--SQLQuery3 - CREATE Schedule and Grades.sql
 USE PV_521_DDL;
 
---CREATE TABLE Schedule
---(
---lesson_id BIGINT PRIMARY KEY,
---[date] DATE NOT NULL,
---[time] TIME(0) NOT NULL,
---[group] INT NOT NULL
---CONSTRAINT FK_Schedule_Groups FOREIGN KEY REFERENCES Groups(group_id),
---discipline SMALLINT NOT NULL
---CONSTRAINT FK_Schedule_Disciplines FOREIGN KEY REFERENCES Disciplines(discipline_id),
---teacher INT NOT NULL
---CONSTRAINT FK_Schedule_Teacher FOREIGN KEY REFERENCES Teachers(teacher_id),
---[subject] NVARCHAR(256),
---spent BIT NOT NULL
---);
---CREATE TABLE Grades
---(
---student INT CONSTRAINT FK_Grades_Studennts FOREIGN KEY REFERENCES Students(student_id),
---lesson BIGINT CONSTRAINT FK_Grades_Schedule FOREIGN KEY REFERENCES Schedule(lesson_id),
---PRIMARY KEY(student,lesson),
---grade_1 TINYINT CONSTRAINT CK_Grade_1 CHECK (grade_1>0 AND grade_1<=12),
---grade_2 TINYINT CONSTRAINT CK_Grade_2 CHECK (grade_2>0 AND grade_2<=12) 
---);
---CREATE TABLE Exams
---(
---student INT CONSTRAINT FK_Exams_Studennts FOREIGN KEY REFERENCES Students(student_id),
---discipline SMALLINT CONSTRAINT FK_Exams_Disciplines FOREIGN KEY REFERENCES Disciplines(discipline_id),
---grade TINYINT CONSTRAINT CK_Grade CHECK (grade>0 AND grade<=12)
-----);
---CREATE TABLE HomeWorks
---(
---[group] INT CONSTRAINT FK_HW_Groups FOREIGN KEY REFERENCES Groups(group_id),
---lesson BIGINT CONSTRAINT FK_HW_Schedule FOREIGN KEY REFERENCES Schedule(lesson_id),
---[data] VARBINARY(MAX),
---comment NVARCHAR(1024),
---CONSTRAINT CK_DATA_OR_COMMENT CHECK([data] IS NOT NULL OR comment IS NOT NULL),
---PRIMARY KEY([group],lesson)
---)
---CREATE TABLE ResultsHW
---(
---student INT CONSTRAINT FK_Results_Students FOREIGN KEY REFERENCES Students(student_id),
---[group] INT,
---lesson BIGINT,
---result VARBINARY(MAX),
---comment NVARCHAR(1024),
---grade TINYINT CONSTRAINT CK_HW_Grade CHECK (grade> 0 AND grade <=12),
---CONSTRAINT FK_Results_HW FOREIGN KEY ([group],lesson) REFERENCES HomeWorks([group],lesson),
---CONSTRAINT CK_RESULT_OR_COMMENT CHECK([result] IS NOT NULL OR comment IS NOT NULL),
---PRIMARY KEY(student,[group],lesson)
---);
+CREATE TABLE Schedule
+(
+	lesson_id	BIGINT		PRIMARY KEY,
+	[date]		DATE		NOT NULL,
+	[time]		TIME(0)		NOT NULL,
+	[group]		INT			NOT NULL
+	CONSTRAINT	FK_Schedule_Groups		FOREIGN KEY REFERENCES	Groups(group_id),
+	discipline	SMALLINT	NOT NULL
+	CONSTRAINT	FK_Schedule_Disciplines	FOREIGN KEY REFERENCES	Disciplines(discipline_id),
+	teacher		INT			NOT NULL
+	CONSTRAINT	FK_Schedule_Teacher		FOREIGN KEY REFERENCES	Teachers(teacher_id),
+	[subject]	NVARCHAR(256),
+	spent		BIT			NOT NULL
+)
+
+CREATE TABLE Grades
+(
+	student		INT			CONSTRAINT	FK_Grades_Students		FOREIGN KEY REFERENCES Students(student_id),
+	lesson		BIGINT		CONSTRAINT	FK_Grades_Schedule		FOREIGN KEY REFERENCES Schedule(lesson_id),
+	PRIMARY KEY(student,lesson),
+	grade_1		TINYINT		CONSTRAINT	CK_Grade_1	CHECK	(grade_1>0 AND grade_1<=12),
+	grade_2		TINYINT		CONSTRAINT	CK_Grade_2	CHECK	(grade_2>0 AND grade_2<=12)
+)
+CREATE TABLE Exams
+(
+	student		INT			CONSTRAINT	FK_Exams_Students		FOREIGN KEY REFERENCES Students(student_id),
+	discipline	SMALLINT	CONSTRAINT	FK_Exams_Disciplines	FOREIGN KEY REFERENCES Disciplines(discipline_id),
+	grade		TINYINT		CONSTRAINT	CK_Exam_Grade	CHECK	(grade > 0 AND grade <= 12)
+)
+CREATE TABLE	HomeWorks
+(
+	[group]		INT			CONSTRAINT	FK_HW_Groups			FOREIGN KEY REFERENCES Groups(group_id),
+	lesson		BIGINT		CONSTRAINT	FK_HW_Schedule			FOREIGN KEY REFERENCES Schedule(lesson_id),
+	[data]		VARBINARY(MAX),
+	comment		NVARCHAR(1024),
+	CONSTRAINT	CK_DATA_OR_COMMENT	CHECK ([data] IS NOT NULL OR comment IS NOT NULL),
+	PRIMARY KEY([group],lesson)
+	--https://stackoverflow.com/questions/7017871/one-of-the-column-between-two-columns-should-be-not-null-how-to-enforce-it-in-s
+	--CONSTRAINT CK_Null_HW CHECK([data] is not NULL or comment is NOT NULL)
+)
+CREATE TABLE	ResultsHW
+(
+	student		INT				CONSTRAINT	FK_Results_Students	FOREIGN KEY REFERENCES Students(student_id),
+	[group]		INT,			--CONSTRAINT	FK_Results_Groups	FOREIGN KEY REFERENCES Groups(group_id),
+	lesson		BIGINT,			--CONSTRAINT	FK_Results_Schedule	FOREIGN KEY REFERENCES Schedule(lesson_id),
+	result		VARBINARY(MAX),
+	comment		NVARCHAR(1024),
+	grade		TINYINT			CONSTRAINT	CK_HW_Grade		CHECK	(grade > 0 AND grade <= 12),
+	CONSTRAINT	FK_Results_HW	FOREIGN KEY	([group],lesson)	REFERENCES	HomeWorks([group],lesson),
+	CONSTRAINT	CK_RESULT_OR_COMMENT	CHECK ([result] IS NOT NULL OR comment IS NOT NULL),
+	PRIMARY KEY(student,[group],lesson)
+);
